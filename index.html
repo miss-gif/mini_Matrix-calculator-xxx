@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>행렬계산기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./main.js"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h1>text</h1>
+      <header>
+        <div class="procession_A">
+          <h2>A 배열</h2>
+          <input id="procession_A_row" class="" type="number" min="1" max="9" placeholder="행" />
+          <input id="procession_A_column" class="" type="number" min="1" max="9" placeholder="열" />
+        </div>
+        <div class="procession_B">
+          <h2>B 배열</h2>
+          <input id="procession_B_row" class="" type="number" min="1" max="9" placeholder="행" />
+          <input id="procession_B_column" class="" type="number" min="1" max="9" placeholder="열" />
+        </div>
+        <div class="btn_box">
+          <button id="produce_btn" class="btn_a">생성하기</button>
+          <button id="" class="btn_a">자동입력</button>
+          <button id="" class="btn_b">더하기</button>
+          <button id="" class="btn_b">빼기</button>
+          <button id="" class="btn_b">곱하기</button>
+          <button id="" class="btn_b">계산하기</button>
+          <button id="" class="btn_c">초기화</button>
+        </div>
+      </header>
+      <main>
+        <h2>결과 출력</h2>
+        <div class="">
+          <div class="A배열"></div>
+          <div class="사칙연산"></div>
+          <div class="B배열"></div>
+          <div class="계산">=</div>
+          <div class="값"></div>
+        </div>
+      </main>
+      <footer>
+        <address>
+          Copyright ©
+          <a href="#"><strong>miss-gif</strong></a>
+          All Rights Reserved.
+        </address>
+      </footer>
+    </div>
+  </body>
+</html>
