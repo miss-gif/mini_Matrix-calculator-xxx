@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>행렬계산기</title>
+    <!-- 리셋 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <!-- CSS -->
     <link rel="stylesheet" href="./style.css" />
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- JS -->
     <script defer src="./main.js"></script>
   </head>
 
@@ -26,21 +31,21 @@
         <div class="btn_box">
           <button id="produce_btn" class="btn_a">생성하기</button>
           <button id="" class="btn_a">자동입력</button>
-          <button id="" class="btn_b">더하기</button>
-          <button id="" class="btn_b">빼기</button>
-          <button id="" class="btn_b">곱하기</button>
+          <button id="plus_btn" class="btn_b">더하기</button>
+          <button id="minus_btn" class="btn_b">빼기</button>
+          <button id="multiply_btn" class="btn_b">곱하기</button>
           <button id="" class="btn_b">계산하기</button>
-          <button id="" class="btn_c">초기화</button>
+          <button id="reset_btn" class="btn_c">초기화</button>
         </div>
       </header>
       <main>
-        <h2>결과 출력</h2>
-        <div class="">
-          <div class="A배열"></div>
-          <div class="사칙연산"></div>
-          <div class="B배열"></div>
-          <div class="계산">=</div>
-          <div class="값"></div>
+        <h2 class="main_title">결과 출력</h2>
+        <div class="result_box">
+          <div class="input_a"></div>
+          <div class="arithmetic_operation"></div>
+          <div class="input_b"></div>
+          <div class="equals_value">=</div>
+          <div class="input_value"></div>
         </div>
       </main>
       <footer>
