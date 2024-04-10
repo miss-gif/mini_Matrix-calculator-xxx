@@ -1,35 +1,33 @@
 const create_matrix_btn = document.querySelector("#create_matrix_btn"); // 행렬 생성 버튼
-const input_A = document.querySelector(".input_A"); // 행렬A 영역
-const input_B = document.querySelector(".input_B"); // 행렬A 영역
+const input_A = document.querySelector(".input_A"); // 행렬 A 영역
+const input_B = document.querySelector(".input_B"); // 행렬 B 영역
 
+// 행렬 생성 버튼에 이벤트 리스너 추가
 create_matrix_btn.addEventListener("click", () => {
   console.log("행렬 생성 버튼이 눌려짐");
 
-  const matrix_A_row = document.querySelector("#matrix_A_row");
-  const matrix_A_column = document.querySelector("#matrix_A_column");
-  console.log(`행렬A 행 : ${matrix_A_row.value}`);
-  console.log(`행렬A 열 : ${matrix_A_column.value}`);
-  input_A.textContent = ""; // 초기화
+  // 행렬 A 생성 함수 호출
+  generateMatrix(input_A, "#matrix_A_row", "#matrix_A_column");
 
-  for (let index = 0; index < matrix_A_column.value; index++) {
-    for (let index = 0; index < matrix_A_row.value; index++) {
-      let newInput = document.createElement("input");
-      input_A.appendChild(newInput);
-    }
-    input_A.appendChild(document.createElement("br"));
-  }
-
-  const matrix_B_row = document.querySelector("#matrix_B_row");
-  const matrix_B_column = document.querySelector("#matrix_B_column");
-  console.log(`행렬A 행 : ${matrix_B_row.value}`);
-  console.log(`행렬A 열 : ${matrix_B_column.value}`);
-  input_B.textContent = ""; // 초기화
-
-  for (let index = 0; index < matrix_B_column.value; index++) {
-    for (let index = 0; index < matrix_B_row.value; index++) {
-      let newInput = document.createElement("input");
-      input_B.appendChild(newInput);
-    }
-    input_B.appendChild(document.createElement("br"));
-  }
+  // 행렬 B 생성 함수 호출
+  generateMatrix(input_B, "#matrix_B_row", "#matrix_B_column");
 });
+
+// 행렬 생성 함수
+function generateMatrix(container, rowSelector, columnSelector) {
+  const rowInput = document.querySelector(rowSelector); // 행 입력 요소 선택
+  const columnInput = document.querySelector(columnSelector); // 열 입력 요소 선택
+  console.log(`행 : ${rowInput.value}`);
+  console.log(`열 : ${columnInput.value}`);
+
+  container.innerHTML = ""; // 행렬 영역 초기화
+
+  // 행렬 생성 반복문
+  for (let columnIndex = 0; columnIndex < columnInput.value; columnIndex++) {
+    for (let rowIndex = 0; rowIndex < rowInput.value; rowIndex++) {
+      let newInput = document.createElement("input"); // 새로운 input 요소 생성
+      container.appendChild(newInput); // input 요소를 행렬 영역에 추가
+    }
+    container.appendChild(document.createElement("br")); // 행이 끝날 때마다 줄 바꿈 요소 추가
+  }
+}
