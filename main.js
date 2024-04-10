@@ -1,40 +1,35 @@
-let produce_btn = document.querySelector("#produce_btn"); //생성하기 버튼
-let input_a = document.querySelector(".input_a");
-let input_b = document.querySelector(".input_b");
+const create_matrix_btn = document.querySelector("#create_matrix_btn"); // 행렬 생성 버튼
+const input_A = document.querySelector(".input_A"); // 행렬A 영역
+const input_B = document.querySelector(".input_B"); // 행렬A 영역
 
-produce_btn.addEventListener("click", function () {
-  let procession_A_row = document.querySelector("#procession_A_row").value;
-  let procession_A_column = document.querySelector("#procession_A_column").value;
-  let procession_B_row = document.querySelector("#procession_B_row").value;
-  let procession_B_column = document.querySelector("#procession_B_column").value;
+create_matrix_btn.addEventListener("click", () => {
+  console.log("행렬 생성 버튼이 눌려짐");
 
-  input_a.innerHTML = procession_A_row + procession_A_column;
-  input_b.innerHTML = procession_B_row + procession_B_column;
-});
+  const matrix_A_row = document.querySelector("#matrix_A_row");
+  const matrix_A_column = document.querySelector("#matrix_A_column");
+  console.log(`행렬A 행 : ${matrix_A_row.value}`);
+  console.log(`행렬A 열 : ${matrix_A_column.value}`);
+  input_A.textContent = ""; // 초기화
 
-let plus_btn = document.querySelector("#plus_btn"); //더하기 버튼
-let minus_btn = document.querySelector("#minus_btn"); //빼기 버튼
-let multiply_btn = document.querySelector("#multiply_btn"); //곱하기 버튼
-let arithmetic_operation = document.querySelector(".arithmetic_operation"); //사칙연산 출력
+  for (let index = 0; index < matrix_A_column.value; index++) {
+    for (let index = 0; index < matrix_A_row.value; index++) {
+      let newInput = document.createElement("input");
+      input_A.appendChild(newInput);
+    }
+    input_A.appendChild(document.createElement("br"));
+  }
 
-plus_btn.addEventListener("click", function () {
-  arithmetic_operation.innerHTML = "<span class='material-icons'> add </span>";
-});
+  const matrix_B_row = document.querySelector("#matrix_B_row");
+  const matrix_B_column = document.querySelector("#matrix_B_column");
+  console.log(`행렬A 행 : ${matrix_B_row.value}`);
+  console.log(`행렬A 열 : ${matrix_B_column.value}`);
+  input_B.textContent = ""; // 초기화
 
-minus_btn.addEventListener("click", function () {
-  arithmetic_operation.innerHTML = "<span class='material-icons'> remove </span>";
-});
-
-multiply_btn.addEventListener("click", function () {
-  arithmetic_operation.innerHTML = "<span class='material-icons'> close </span>";
-});
-
-let reset_btn = document.querySelector("#reset_btn"); //리셋 버튼
-
-reset_btn.addEventListener("click", function () {
-  input_a.innerHTML = "";
-  input_b.innerHTML = "";
-  arithmetic_operation.innerHTML = "";
-  equals_value.innerHTML = "";
-  input_value.innerHTML = "";
+  for (let index = 0; index < matrix_B_column.value; index++) {
+    for (let index = 0; index < matrix_B_row.value; index++) {
+      let newInput = document.createElement("input");
+      input_B.appendChild(newInput);
+    }
+    input_B.appendChild(document.createElement("br"));
+  }
 });
