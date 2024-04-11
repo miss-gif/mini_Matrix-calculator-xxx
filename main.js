@@ -63,4 +63,28 @@ add_btn.addEventListener("click", () => {
   console.log("더하기 버튼이 눌려짐");
   const result = document.querySelector(".result_value"); // 결과 출력 영역
   result.textContent = ""; // 결과 출력 영역 초기화
+
+  const a1 = document.querySelector("#matrix_A_row").value;
+  const b1 = document.querySelector("#matrix_B_row").value;
+  const a2 = document.querySelector("#matrix_A_column").value;
+  const b2 = document.querySelector("#matrix_B_column").value;
+
+  const cc = document.querySelector(".result_value");
+
+  console.log(a1, b1, a2, b2);
+
+  if (a1 === b1 && a2 === b2) {
+    console.log("같다");
+    // 행렬 생성 반복문
+    for (let i = 0; i < a1; i++) {
+      for (let i = 0; i < a2; i++) {
+        let newInput = document.createElement("input"); // 새로운 input 요소 생성
+        cc.appendChild(newInput); // input 요소를 행렬 영역에 추가
+      }
+      cc.appendChild(document.createElement("br")); // 행이 끝날 때마다 줄 바꿈 요소 추가
+    }
+  } else {
+    alert("틀림");
+    result.textContent = ""; // 결과 출력 영역 초기화
+  }
 });

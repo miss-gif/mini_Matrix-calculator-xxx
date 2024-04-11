@@ -1,64 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>행렬 계산기</title>
+    <!-- 리셋 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- 구글 아이콘 -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <!-- JS -->
+    <script defer src="./main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>행렬 계산기</title>
-  <!-- 리셋 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <!-- CSS -->
-  <link rel="stylesheet" href="./style.css">
-  <!-- 구글 아이콘 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- JS -->
-  <script defer src="./main.js"></script>
-</head>
-
-<body>
-  <div class="wrapper">
-    <header>
-      <div class="matrix_input">
-        <h2>행렬A 입력</h2>
-        <input id="matrix_A_row" type="number" min="1" max="9" placeholder="행" value="3" />
-        <input id="matrix_A_column" type="number" min="1" max="9" placeholder="열" value="3" />
-      </div>
-      <div class="matrix_input">
-        <h2>행렬B 입력</h2>
-        <input id="matrix_B_row" type="number" min="1" max="9" placeholder="행" value="3" />
-        <input id="matrix_B_column" type="number" min="1" max="9" placeholder="열" value="3" />
-      </div>
-      <div class="btn_group">
-        <button id="create_matrix_btn">행렬 생성</button>
-        <button id="auto_fill_btn">자동입력</button>
-        <button id="add_btn">더하기</button>
-        <button id="subtract_btn">빼기</button>
-        <button id="multiply_btn">곱하기</button>
-        <button id="calculate_btn">계산하기</button>
-        <button id="reset_btn">초기화</button>
-      </div>
-    </header>
-    <main>
-      <h2 class="result_title">결과 출력</h2>
-      <div class="result_box">
-        <div class="input_A">
-          행렬A 영역
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="matrix_input">
+          <h2>행렬A 입력</h2>
+          <input
+            id="matrix_A_row"
+            type="number"
+            min="1"
+            max="9"
+            placeholder="행"
+            value="3"
+          />
+          <input
+            id="matrix_A_column"
+            type="number"
+            min="1"
+            max="9"
+            placeholder="열"
+            value="3"
+          />
         </div>
-        <div class="operation_symbol">+</div>
-        <div class="input_B">행렬B 영역</div>
-        <div class="equals_sign">=</div>
-        <div class="result_value">결과 출력</div>
-      </div>
-    </main>
-    <footer>
-      <address>
-        저작권 ©
-        <a href="#"><strong>miss-gif</strong></a>
-        All Rights Reserved.
-      </address>
-    </footer>
-  </div>
-</body>
-
+        <div class="matrix_input">
+          <h2>행렬B 입력</h2>
+          <input
+            id="matrix_B_row"
+            type="number"
+            min="1"
+            max="9"
+            placeholder="행"
+            value="3"
+          />
+          <input
+            id="matrix_B_column"
+            type="number"
+            min="1"
+            max="9"
+            placeholder="열"
+            value="3"
+          />
+        </div>
+        <div class="btn_group">
+          <button id="create_matrix_btn">행렬 생성</button>
+          <button id="auto_fill_btn">자동입력</button>
+          <button id="add_btn">더하기</button>
+          <button id="subtract_btn">빼기</button>
+          <button id="multiply_btn">곱하기</button>
+          <button id="calculate_btn">계산하기</button>
+          <button id="reset_btn">초기화</button>
+        </div>
+      </header>
+      <main>
+        <h2 class="result_title">결과 출력</h2>
+        <div class="result_box">
+          <div class="input_A">행렬A 영역</div>
+          <div class="operation_symbol">+</div>
+          <div class="input_B">행렬B 영역</div>
+          <div class="equals_sign">=</div>
+          <div class="result_value">결과 출력</div>
+        </div>
+      </main>
+      <footer>
+        <address>
+          저작권 ©
+          <a href="#"><strong>miss-gif</strong></a>
+          All Rights Reserved.
+        </address>
+      </footer>
+    </div>
+  </body>
 </html>
