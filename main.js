@@ -75,7 +75,34 @@ buttons.autoFill.addEventListener("click", () => {
 buttons.add.addEventListener("click", () => {
   console.log("더하기 버튼이 눌려짐");
 
-  resultMatrix(inputs.result);
+  const inputsA = inputs.A.querySelectorAll("input");
+  const inputsB = inputs.B.querySelectorAll("input");
+
+  const matrix1 = [];
+  const matrix2 = [];
+
+  // 입력된 값을 행렬로 변환
+  for (let i = 0; i < inputsA.length; i++) {
+    const valueA = parseInt(inputsA[i].value);
+    const valueB = parseInt(inputsB[i].value);
+    matrix1.push(valueA);
+    matrix2.push(valueB);
+  }
+
+  // 행렬의 크기가 같은지 확인
+  if (matrix1.length !== matrix2.length) {
+    alert("두 행렬의 크기가 같아야 합니다.");
+    return;
+  }
+
+  // 행렬 덧셈 수행
+  const resultMatrix = [];
+  for (let i = 0; i < matrix1.length; i++) {
+    resultMatrix.push(matrix1[i] + matrix2[i]);
+  }
+
+  // 결과를 result에 표시
+  inputs.result.textContent = resultMatrix.join(", ");
 });
 
 buttons.subtract.addEventListener("click", () => {
