@@ -54,6 +54,7 @@ function resultMatrix(container) {
 // 버튼 이벤트 리스너 등록
 buttons.create.addEventListener("click", () => {
   console.log("행렬 생성 버튼이 눌려짐");
+  inputs.result.textContent = "";
 
   // 행렬 A 생성 함수 호출
   generateMatrix(inputs.A, "#matrix_A_row", "#matrix_A_column");
@@ -64,6 +65,7 @@ buttons.create.addEventListener("click", () => {
 
 buttons.autoFill.addEventListener("click", () => {
   console.log("자동입력 버튼이 눌려짐");
+  inputs.result.textContent = "";
 
   // 행렬 A 생성 함수 호출 (자동입력 모드)
   generateMatrix(inputs.A, "#matrix_A_row", "#matrix_A_column", true);
@@ -74,6 +76,7 @@ buttons.autoFill.addEventListener("click", () => {
 
 buttons.add.addEventListener("click", () => {
   console.log("더하기 버튼이 눌려짐");
+  inputs.result.textContent = "";
 
   const inputsA = inputs.A.querySelectorAll("input");
   const inputsB = inputs.B.querySelectorAll("input");
@@ -89,20 +92,23 @@ buttons.add.addEventListener("click", () => {
     matrix2.push(valueB);
   }
 
-  // 행렬의 크기가 같은지 확인
-  if (matrix1.length !== matrix2.length) {
-    alert("두 행렬의 크기가 같아야 합니다.");
-    return;
-  }
-
   // 행렬 덧셈 수행
   const resultMatrix = [];
+  const size = Math.sqrt(matrix1.length); // 행렬의 크기 구하기
   for (let i = 0; i < matrix1.length; i++) {
     resultMatrix.push(matrix1[i] + matrix2[i]);
   }
 
   // 결과를 result에 표시
-  inputs.result.textContent = resultMatrix.join(", ");
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      const index = i * size + j;
+      let newInput = document.createElement("input");
+      newInput.value = resultMatrix[index];
+      inputs.result.appendChild(newInput);
+    }
+    inputs.result.appendChild(document.createElement("br"));
+  }
 });
 
 buttons.subtract.addEventListener("click", () => {
@@ -113,12 +119,6 @@ buttons.subtract.addEventListener("click", () => {
 
 buttons.multiply.addEventListener("click", () => {
   console.log("곱하기 버튼이 눌려짐");
-
-  resultMatrix(inputs.result);
-});
-
-buttons.calculate.addEventListener("click", () => {
-  console.log("계산하기 버튼이 눌려짐");
 
   resultMatrix(inputs.result);
 });
