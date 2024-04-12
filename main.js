@@ -4,7 +4,6 @@ const buttons = {
   add: document.querySelector("#add_btn"), // 더하기 버튼
   subtract: document.querySelector("#subtract_btn"), // 빼기 버튼
   multiply: document.querySelector("#multiply_btn"), // 곱하기 버튼
-  calculate: document.querySelector("#calculate_btn"), // 계산하기 버튼
   reset: document.querySelector("#reset_btn"), // 초기화 버튼
 };
 
@@ -80,6 +79,14 @@ buttons.add.addEventListener("click", () => {
 
   const inputsA = inputs.A.querySelectorAll("input");
   const inputsB = inputs.B.querySelectorAll("input");
+
+  console.log(inputsA.length);
+  console.log(inputsB.length);
+
+  if (inputsA.length !== inputsB.length) {
+    alert("에러");
+    return;
+  }
 
   const matrix1 = [];
   const matrix2 = [];
