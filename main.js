@@ -120,14 +120,93 @@ buttons.add.addEventListener("click", () => {
 
 buttons.subtract.addEventListener("click", () => {
   console.log("빼기 버튼이 눌려짐");
+  inputs.result.textContent = "";
 
-  resultMatrix(inputs.result);
+  const inputsA = inputs.A.querySelectorAll("input");
+  const inputsB = inputs.B.querySelectorAll("input");
+
+  console.log(inputsA.length);
+  console.log(inputsB.length);
+
+  if (inputsA.length !== inputsB.length) {
+    alert("에러");
+    return;
+  }
+
+  const matrix1 = [];
+  const matrix2 = [];
+
+  // 입력된 값을 행렬로 변환
+  for (let i = 0; i < inputsA.length; i++) {
+    const valueA = parseInt(inputsA[i].value);
+    const valueB = parseInt(inputsB[i].value);
+    matrix1.push(valueA);
+    matrix2.push(valueB);
+  }
+
+  // 행렬 뺄셈 수행
+  const resultMatrix = [];
+  const size = Math.sqrt(matrix1.length); // 행렬의 크기 구하기
+  for (let i = 0; i < matrix1.length; i++) {
+    resultMatrix.push(matrix1[i] - matrix2[i]);
+  }
+
+  // 결과를 result에 표시
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      const index = i * size + j;
+      let newInput = document.createElement("input");
+      newInput.value = resultMatrix[index];
+      inputs.result.appendChild(newInput);
+    }
+    inputs.result.appendChild(document.createElement("br"));
+  }
 });
 
 buttons.multiply.addEventListener("click", () => {
   console.log("곱하기 버튼이 눌려짐");
 
-  resultMatrix(inputs.result);
+  inputs.result.textContent = "";
+
+  const inputsA = inputs.A.querySelectorAll("input");
+  const inputsB = inputs.B.querySelectorAll("input");
+
+  console.log(inputsA.length);
+  console.log(inputsB.length);
+
+  if (inputsA.length !== inputsB.length) {
+    alert("에러");
+    return;
+  }
+
+  const matrix1 = [];
+  const matrix2 = [];
+
+  // 입력된 값을 행렬로 변환
+  for (let i = 0; i < inputsA.length; i++) {
+    const valueA = parseInt(inputsA[i].value);
+    const valueB = parseInt(inputsB[i].value);
+    matrix1.push(valueA);
+    matrix2.push(valueB);
+  }
+
+  // 행렬 곱셈 수행
+  const resultMatrix = [];
+  const size = Math.sqrt(matrix1.length); // 행렬의 크기 구하기
+  for (let i = 0; i < matrix1.length; i++) {
+    resultMatrix.push(matrix1[i] * matrix2[i]);
+  }
+
+  // 결과를 result에 표시
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      const index = i * size + j;
+      let newInput = document.createElement("input");
+      newInput.value = resultMatrix[index];
+      inputs.result.appendChild(newInput);
+    }
+    inputs.result.appendChild(document.createElement("br"));
+  }
 });
 
 buttons.reset.addEventListener("click", () => {
