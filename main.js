@@ -92,11 +92,13 @@ function performOperation(operation) {
 matrixButtons.create.addEventListener("click", () => {
   generateMatrix(matrixInputs.A, "#matrix_A_row", "#matrix_A_column");
   generateMatrix(matrixInputs.B, "#matrix_B_row", "#matrix_B_column");
+  matrixInputs.result.textContent = ""; // 결과 출력란 초기화
 });
 
 matrixButtons.autoFill.addEventListener("click", () => {
   generateMatrix(matrixInputs.A, "#matrix_A_row", "#matrix_A_column", true);
   generateMatrix(matrixInputs.B, "#matrix_B_row", "#matrix_B_column", true);
+  matrixInputs.result.textContent = ""; // 결과 출력란 초기화
 });
 
 matrixButtons.add.addEventListener("click", () => {
