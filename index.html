@@ -18,7 +18,7 @@
 
 <body>
   <div class="wrapper">
-    <header>
+    <div class="header">
       <div class="matrix_input">
         <h2>행렬A 입력</h2>
         <input id="matrix_A_row" type="number" min="1" max="9" placeholder="행" value="3" />
@@ -37,21 +37,29 @@
         <button id="multiply_btn">곱하기</button>
         <button id="reset_btn">초기화</button>
       </div>
-    </header>
+    </div>
     <main>
       <h2 class="result_title">결과 출력</h2>
       <div class="result_box">
-        <div class="input_A">행렬A 영역</div>
-        <div class="operation_symbol">+</div>
-        <div class="input_B">행렬B 영역</div>
-        <div class="equals_sign">=</div>
-        <div class="result_value">결과 출력</div>
+        <div class="layout-center">
+          <div class="input_A">행렬A 영역</div>
+        </div>
+        <div class="option">+</div>
+        <div class="layout-center">
+          <div class="input_B">행렬B 영역</div>
+        </div>
+        <div class="equals-sign option">=</div>
+        <div class="layout-center">
+          <div class="result_value">결과 출력</div>
+        </div>
       </div>
     </main>
     <footer>
       <address>
         저작권 ©
-        <a href="#"><strong>miss-gif</strong></a>
+        <a href="https://github.com/miss-gif" target="_blank" rel="noopener noreferrer">
+          <strong>miss-gif</strong>
+        </a>
         All Rights Reserved.
       </address>
     </footer>
