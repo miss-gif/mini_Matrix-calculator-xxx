@@ -53,7 +53,7 @@ function performOperation(operation) {
 
   if (inputsA.length !== inputsB.length) {
     // 행렬 크기가 다를 경우 에러 처리
-    alert("행렬 크기가 다릅니다.");
+    alert("행렬의 크기가 다릅니다.");
     return;
   }
 
@@ -63,6 +63,11 @@ function performOperation(operation) {
   for (let i = 0; i < inputsA.length; i++) {
     const valueA = parseInt(inputsA[i].value);
     const valueB = parseInt(inputsB[i].value);
+    if (isNaN(valueA) || isNaN(valueB)) {
+      // NaN 값이 있는 경우 에러 처리
+      alert("행렬에 유효하지 않은 값이 있습니다.");
+      return;
+    }
     if (operation === "add") {
       resultMatrix.push(valueA + valueB); // 덧셈 연산 수행
     } else if (operation === "subtract") {
